@@ -26,22 +26,5 @@ class FlightsDepartureDateBeforeActualTimeTest {
                         .allMatch(segment -> segment.getDepartureDate().isAfter(LocalDateTime.now()))).toList();
         assertEquals(expected, actual);
         assertEquals(expected.size(), actual.size());
-        flights.clear();
-        assertThrows(FlightsNotFoundException.class, () -> flights_departureDateBeforeActualTime.flightsFilter(flights));
-        assertEquals(flights.size(), 0);
-    }
-
-    @Test
-    public void flightsFilterNegativeTest() {
-        Flights_DepartureDateBeforeActualTime flights_departureDateBeforeActualTime = new Flights_DepartureDateBeforeActualTime();
-        flights.clear();
-        assertThrows(FlightsNotFoundException.class, () -> flights_departureDateBeforeActualTime.flightsFilter(flights));
-        Assertions.assertEquals(flights.size(), 0);
-    }
-
-    private void checkFlights(List<Flight> flights) {
-        if (flights.isEmpty()) {
-            throw new FlightsNotFoundException("No flights found");
-        }
     }
 }

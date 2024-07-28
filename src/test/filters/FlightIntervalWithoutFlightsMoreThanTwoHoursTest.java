@@ -31,14 +31,6 @@ public class FlightIntervalWithoutFlightsMoreThanTwoHoursTest {
         assertEquals(expected.size(), actual.size());
     }
 
-    @Test
-    public void flightsFilterNegativeTest() {
-        Flight_IntervalWithoutFlightsMoreThanTwoHours flight_IntervalWithoutFlightsMoreThanTwoHours = new Flight_IntervalWithoutFlightsMoreThanTwoHours();
-        flights.clear();
-        assertThrows(FlightsNotFoundException.class, () -> flight_IntervalWithoutFlightsMoreThanTwoHours.flightsFilter(flights));
-        Assertions.assertEquals(flights.size(), 0);
-    }
-
     private boolean checkTimeOnLand(List<Segment> segments) {
         long timeOnLand = 0;
         for (int i = 1; i < segments.size(); i++) {

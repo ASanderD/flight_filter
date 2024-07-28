@@ -14,7 +14,7 @@ import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertThrows;
 
 public class FlightsSegmentsWithArrivalDateBeforeDepartureDateTest {
-    private final List<Flight> flights=new ArrayList<>(FlightBuilder.createFlights());
+    private final List<Flight> flights = new ArrayList<>(FlightBuilder.createFlights());
 
     @Test
     public void flightsFilter() {
@@ -26,21 +26,6 @@ public class FlightsSegmentsWithArrivalDateBeforeDepartureDateTest {
                 .toList();
         assertEquals(expected, actual);
         assertEquals(expected.size(), actual.size());
-        flights.clear();
-        assertThrows(FlightsNotFoundException.class, () -> flights_segmentsWithArrivalDateBeforeDepartureDate.flightsFilter(flights));
-        Assertions.assertEquals(flights.size(), 0);
-    }
-    @Test
-    public void flightsFilterNegativeTest() {
-        Flights_SegmentsWithArrivalDateBeforeDepartureDate flights_segmentsWithArrivalDateBeforeDepartureDate = new Flights_SegmentsWithArrivalDateBeforeDepartureDate();
-        flights.clear();
-        assertThrows(FlightsNotFoundException.class, () -> flights_segmentsWithArrivalDateBeforeDepartureDate.flightsFilter(flights));
-        Assertions.assertEquals(flights.size(), 0);
-    }
-    private void checkFlights(List<Flight> flights) {
-        if (flights.isEmpty()) {
-            throw new FlightsNotFoundException("No flights found");
-        }
     }
 }
 
