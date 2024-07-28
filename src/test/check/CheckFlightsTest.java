@@ -4,7 +4,6 @@ import com.gridnine.testing.FlightBuilder;
 import com.gridnine.testing.exception.FlightsNotFoundException;
 import com.gridnine.testing.filters.impl.Flights_DepartureDateBeforeActualTime;
 import com.gridnine.testing.model.Flight;
-import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 
 import java.util.ArrayList;

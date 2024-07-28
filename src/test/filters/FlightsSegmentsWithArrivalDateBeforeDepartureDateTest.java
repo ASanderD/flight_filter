@@ -1,17 +1,14 @@
 package test.filters;
 
 import com.gridnine.testing.FlightBuilder;
-import com.gridnine.testing.exception.FlightsNotFoundException;
 import com.gridnine.testing.filters.impl.Flights_SegmentsWithArrivalDateBeforeDepartureDate;
 import com.gridnine.testing.model.Flight;
 import org.junit.Test;
-import org.junit.jupiter.api.Assertions;
 
 import java.util.ArrayList;
 import java.util.List;
 
 import static org.junit.Assert.assertEquals;
-import static org.junit.Assert.assertThrows;
 
 public class FlightsSegmentsWithArrivalDateBeforeDepartureDateTest {
     private final List<Flight> flights = new ArrayList<>(FlightBuilder.createFlights());
